@@ -25,14 +25,29 @@ function removeTodo(todo) {
 </script>
 
 <template>
-  <div class="container">
-    <h1>TO DO LIST.</h1>
+  <div class="choiseTodolist">
+    <div class="aktivitas">
+      <a href="">Aktifitas</a>
+    </div>
+    <div class="filteraktivitas">
+      <a href="">Aktifitas Belum Selesai</a>
+    </div>
   </div>
 
-  <form @submit.prevent="addTodo">
-    <input v-model="newTodo" required placeholder="Tambahkan Tugas" />
-    <button>Tambahkan</button>
-  </form>
+  <div>
+    <h3>Input Aktivitas :</h3>
+  </div>
+
+  <div class="input">
+    <form @submit.prevent="addTodo">
+      <input v-model="newTodo" required placeholder="Tambahkan Tugas" />
+      <button>Tambahkan</button>
+    </form>
+  </div>
+
+  <div class="activity">
+    <h3>Activity</h3>
+  </div>
 
   <ul>
     <li v-for="todo in filteredTodos" :key="todo.id">
@@ -42,19 +57,15 @@ function removeTodo(todo) {
     </li>
   </ul>
 
-  <button @click="hideCompleted = !hideCompleted">
-    {{ hideCompleted ? "Show all" : "Tugas Yang Belum Selesai" }}
-  </button>
+  <div class="hideCompleted">
+    <button @click="hideCompleted = !hideCompleted">
+      {{ hideCompleted ? "Tampilkan Semua" : "Tugas Yang Belum Selesai" }}
+    </button>
+  </div>
 </template>
 
 <style scoped>
 .done {
   text-decoration: line-through;
-}
-
-.container {
-  max-width: 600px;
-  margin: 2rem auto;
-  font-family: sans-serif;
 }
 </style>
