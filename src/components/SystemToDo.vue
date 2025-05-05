@@ -25,15 +25,6 @@ function removeTodo(todo) {
 </script>
 
 <template>
-  <div class="choiseTodolist">
-    <div class="aktivitas">
-      <a href="">Aktifitas</a>
-    </div>
-    <div class="filteraktivitas">
-      <a href="">Aktifitas Belum Selesai</a>
-    </div>
-  </div>
-
   <div>
     <h3>Input Aktivitas :</h3>
   </div>

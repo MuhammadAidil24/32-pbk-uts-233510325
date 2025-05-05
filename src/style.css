@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   padding: 1rem;
   background-color: #04aedd;
@@ -51,6 +56,11 @@ button:focus-visible {
 
 .card {
   padding: 2em;
+}
+
+.footer {
+  padding: 1em;
+  text-align: right;
 }
 
 @media (prefers-color-scheme: light) {
