@@ -31,7 +31,14 @@ const filteredTodos = computed(() => {
 
 function addTodo() {
   if (newTodo.value.trim() !== "") {
-    todos.value.push({ id: id++, text: newTodo.value, done: false });
+    const now = new Date();
+    const timestamp = now.toLocaleString();
+    todos.value.push({
+      id: id++,
+      text: newTodo.value,
+      done: false,
+      createdAt: timestamp,
+    });
     newTodo.value = "";
   }
 }
@@ -56,7 +63,11 @@ function removeTodo(todo) {
       <ul>
         <li v-for="todo in filteredTodos" :key="todo.id">
           <input type="checkbox" v-model="todo.done" />
-          <span :class="{ done: todo.done }">{{ todo.text }}</span>
+          <div>
+            <span :class="{ done: todo.done }">{{ todo.text }}</span
+            ><br />
+            <small style="color: #888">Ditambahkan: {{ todo.createdAt }}</small>
+          </div>
           <button @click="removeTodo(todo)">hapus</button>
         </li>
       </ul>

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -45,6 +46,7 @@ nav a {
   font-size: 1.2em;
   display: block;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nav a:hover {
@@ -67,10 +69,18 @@ form {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input {
   padding: 1rem;
+}
+
+.input h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #04aedd;
 }
 
 input {
@@ -79,26 +89,51 @@ input {
   border: 1px solid #c2c2c2;
   font-size: 1em;
   font-weight: 500;
-  font-family: poppins, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .todoList li {
   list-style: none;
-  padding: 0.5em 5em;
+  padding: 1em;
   margin: 0.5em 0;
   background-color: #f9f9f9;
   border-radius: 8px;
   border: 1px solid #c2c2c2;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
   font-size: 1em;
   font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.todoList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.todoList li .activity {
+  font-size: 1em;
+  font-weight: 600;
+  color: #333;
+}
+
+.todoList li .timestamp {
+  font-size: 0.9em;
+  color: #888;
+}
+
+.todoList li small {
+  font-size: 0.8em;
+  color: #888;
 }
 
 .hideCompleted button {
-  margin-left: 6em;
+  margin: 0 auto;
+  display: block;
 }
 
 button {
@@ -112,6 +147,7 @@ button {
   background-color: #04aedd;
   cursor: pointer;
   transition: border-color 0.25s;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 button:hover {
@@ -133,24 +169,74 @@ button:focus-visible {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.activity h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #04aedd;
+}
+
 .card {
   padding: 2em;
 }
 
 .footer {
   padding: 1em;
-  text-align: right;
+  text-align: center;
+  font-size: 0.8em;
+  color: #777;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* tablet */
+@media (max-width: 1024px) {
+  .form,
+  .activity,
+  .todoList li {
+    width: 90%;
+    padding: 1rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .todoList li {
+    flex-direction: column;
+    align-items: flex-start;
   }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  nav a {
+    font-size: 1em;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    padding: 0.5rem;
+  }
+
+  form,
+  .activity {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .todoList li {
+    padding: 1em;
+    font-size: 0.9em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input,
   button {
-    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hideCompleted button {
+    width: 100%;
+  }
+
+  .footer {
+    text-align: center;
   }
 }
